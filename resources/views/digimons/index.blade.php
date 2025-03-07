@@ -34,17 +34,17 @@
                     </a>
                 </th>
                 <th>
-                    <a href="{{ route('digimons.index', ['sort' => 'tipo', 'direction' => $column == 'tipo' && $direction == 'asc' ? 'desc' : 'asc']) }}">
-                        Tipo
-                        @if($column == 'tipo')
+                    <a href="{{ route('digimons.index', ['sort' => 'atributo', 'direction' => $column == 'atributo' && $direction == 'asc' ? 'desc' : 'asc']) }}">
+                        Atributo
+                        @if($column == 'atributo')
                             <i class="fas fa-sort-{{ $direction == 'asc' ? 'up' : 'down' }}"></i>
                         @endif
                     </a>
                 </th>
                 <th>
-                    <a href="{{ route('digimons.index', ['sort' => 'elemento', 'direction' => $column == 'elemento' && $direction == 'asc' ? 'desc' : 'asc']) }}">
-                        Elemento
-                        @if($column == 'elemento')
+                    <a href="{{ route('digimons.index', ['sort' => 'tipo', 'direction' => $column == 'tipo' && $direction == 'asc' ? 'desc' : 'asc']) }}">
+                        Tipo
+                        @if($column == 'tipo')
                             <i class="fas fa-sort-{{ $direction == 'asc' ? 'up' : 'down' }}"></i>
                         @endif
                     </a>
@@ -57,8 +57,8 @@
             <tr>
                 <td>{{ $digimon->nome }}</td>
                 <td>{{ $digimon->level }}</td>
+                <td>{{ $digimon->atributo }}</td>
                 <td>{{ $digimon->tipo }}</td>
-                <td>{{ $digimon->elemento }}</td>
                 <td>
                     <a href="{{ route('digimons.show', $digimon) }}" class="btn btn-sm btn-info">Ver</a>
                     <a href="{{ route('digimons.edit', $digimon) }}" class="btn btn-sm btn-primary">Editar</a>

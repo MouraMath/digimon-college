@@ -17,7 +17,7 @@ class DigimonController extends Controller
         $direction = $request->input('direction', 'asc');
         
         // Validação de segurança para evitar SQL injection
-        $validColumns = ['nome', 'level', 'tipo', 'elemento'];
+        $validColumns = ['nome', 'level', 'atributo', 'tipo'];
         $column = in_array($column, $validColumns) ? $column : 'nome';
         
         $validDirections = ['asc', 'desc'];
@@ -39,7 +39,11 @@ class DigimonController extends Controller
      */
     public function create()
     {
-        return view('digimons.create');
+        $levels = Digimon::$levels;
+        $atributos = Digimon::$atributos;
+        $tipos = Digimon::$tipos;
+        
+        return view('digimons.create', compact('levels', 'atributos', 'tipos'));
     }
 
     /**
@@ -50,9 +54,9 @@ class DigimonController extends Controller
         // Validação dos dados do formulário
         $validated = $request->validate([
             'nome' => 'required|max:255',
-            'level' => 'required|max:255',
-            'tipo' => 'required|max:255',
-            'elemento' => 'required|max:255',
+            'level' => 'required|in:' . implode(',', Digimon::$levels),
+            'atributo' => 'required|in:' . implode(',', Digimon::$atributos),
+            'tipo' => 'required|in:' . implode(',', Digimon::$tipos),
         ]);
         
         // Cria o digimon com os dados validados
@@ -76,7 +80,11 @@ class DigimonController extends Controller
      */
     public function edit(Digimon $digimon)
     {
-        return view('digimons.edit', compact('digimon'));
+        $levels = Digimon::$levels;
+        $atributos = Digimon::$atributos;
+        $tipos = Digimon::$tipos;
+        
+        return view('digimons.edit', compact('digimon', 'levels', 'atributos', 'tipos'));
     }
 
     /**
@@ -87,9 +95,9 @@ class DigimonController extends Controller
         // Validação dos dados do formulário
         $validated = $request->validate([
             'nome' => 'required|max:255',
-            'level' => 'required|max:255',
-            'tipo' => 'required|max:255',
-            'elemento' => 'required|max:255',
+            'level' => 'required|in:' . implode(',', Digimon::$levels),
+            'atributo' => 'required|in:' . implode(',', Digimon::$atributos),
+            'tipo' => 'required|in:' . implode(',', Digimon::$tipos),
         ]);
         
         // Atualiza o digimon com os dados validados

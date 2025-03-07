@@ -18,30 +18,37 @@
         
         <div class="mb-3">
             <label for="level" class="form-label">Level</label>
-            <input type="text" class="form-control @error('level') is-invalid @enderror" id="level" name="level" value="{{ old('level', $digimon->level) }}" required>
+            <select class="form-select @error('level') is-invalid @enderror" id="level" name="level" required>
+                <option value="">Selecione um level</option>
+                @foreach($levels as $level)
+                    <option value="{{ $level }}" {{ old('level', $digimon->level) == $level ? 'selected' : '' }}>{{ $level }}</option>
+                @endforeach
+            </select>
             @error('level')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
         
         <div class="mb-3">
-            <label for="tipo" class="form-label">Tipo</label>
-            <input type="text" class="form-control @error('tipo') is-invalid @enderror" id="tipo" name="tipo" value="{{ old('tipo', $digimon->tipo) }}" required>
-            @error('tipo')
+            <label for="atributo" class="form-label">Atributo</label>
+            <select class="form-select @error('atributo') is-invalid @enderror" id="atributo" name="atributo" required>
+                <option value="">Selecione um atributo</option>
+                @foreach($atributos as $atributo)
+                    <option value="{{ $atributo }}" {{ old('atributo', $digimon->atributo) == $atributo ? 'selected' : '' }}>{{ $atributo }}</option>
+                @endforeach
+            </select>
+            @error('atributo')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
         
         <div class="mb-3">
-            <label for="elemento" class="form-label">Elemento</label>
-            <input type="text" class="form-control @error('elemento') is-invalid @enderror" id="elemento" name="elemento" value="{{ old('elemento', $digimon->elemento) }}" required>
-            @error('elemento')
+            <label for="tipo" class="form-label">Tipo</label>
+            <select class="form-select @error('tipo') is-invalid @enderror" id="tipo" name="tipo" required>
+                <option value="">Selecione um tipo</option>
+                @foreach($tipos as $tipo)
+                    <option value="{{ $tipo }}" {{ old('tipo', $digimon->tipo) == $tipo ? 'selected' : '' }}>{{ $tipo }}</option>
+                @endforeach
+            </select>
+            @error('tipo')
                 <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Atualizar</button>
-        <a href="{{ route('digimons.index') }}" class="btn btn-secondary">Cancelar</a>
-    </form>
-</div>
-@endsection

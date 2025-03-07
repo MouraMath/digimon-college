@@ -14,5 +14,26 @@ class Digimon extends Model
      *
      * @var array
      */
-    protected $fillable = ['nome', 'level', 'tipo', 'elemento'];
+    protected $fillable = ['nome', 'level', 'atributo', 'tipo'];
+    
+    /**
+     * Valores permitidos para o level do Digimon.
+     *
+     * @var array
+     */
+    public static $levels = ['Rookie', 'Champion', 'Ultimate', 'Mega'];
+    
+    /**
+     * Valores permitidos para o atributo do Digimon.
+     *
+     * @var array
+     */
+    public static $atributos = ['Vaccine', 'Virus', 'Data', 'Free'];
+    
+    /**
+     * Valores permitidos para o tipo do Digimon.
+     *
+     * @var array
+     */
+    public static $tipos = ['Mamífero', 'Reptil', 'Ave', 'Inseto', 'Peixe', 'Dragão', 'Humanoide', 'Outros'];
 }
