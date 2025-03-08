@@ -93,17 +93,19 @@
             transform: translateY(-2px);
         }
         
-        .nav-link {
-            position: relative;
-            transition: all var(--transition-speed) ease;
-            padding: 0.5rem 1rem;
-            margin: 0 0.25rem;
-            border-radius: var(--border-radius);
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+            .nav-link {
+        position: relative;
+        transition: all var(--transition-speed) ease;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        border-radius: var(--border-radius);
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white !important;
+    }
         
         .nav-link::after {
             content: '';
@@ -444,7 +446,7 @@
             width: 60%;
         }
         
-        /* Tema escuro (opcional) */
+       /* Tema escuro (melhorado) */
         .dark-mode {
             --background-color: #121212;
             --card-background: #1e1e1e;
@@ -452,21 +454,257 @@
             --text-light: #b0b0b0;
             --light-color: #2d2d2d;
         }
-        
-        .dark-mode .table th {
-            background-color: #2d2d2d;
-            color: #e0e0e0;
+
+        .dark-mode .navbar {
+            background-color: #1a1a2e;
         }
-        
+
+        .dark-mode .table th,
+        .dark-mode .table th a {
+            background-color: #1a1a2e !important;
+            color: #ffd700 !important;
+            font-weight: 600;
+            border-bottom: 1px solid #333;
+            text-shadow: 0 0 2px rgba(255, 215, 0, 0.3);
+        }
+
+        .dark-mode .table th a:hover {
+            color: #fff !important;
+            text-decoration: none;
+        }
+
+        .dark-mode .table th a i {
+            color: #ffd700 !important;
+        }
+
         .dark-mode .table {
             color: #e0e0e0;
         }
+
+        .dark-mode .page-header h1 {
+            color: #e0e0e0;
+        }
+
+        /* Melhorar a barra de pesquisa no modo escuro */
+        .dark-mode .form-control {
+            background-color: #2d2d3d;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .dark-mode .form-control:focus {
+            background-color: #3d3d4d;
+            border-color: #ffd700;
+            box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+        }
         
-        .dark-mode .form-control, .dark-mode .form-select {
+        .dark-mode .form-select {
             background-color: #2d2d2d;
             border-color: #3d3d3d;
             color: #e0e0e0;
         }
+
+        .dark-mode .form-control::placeholder {
+            color: #888;
+        }
+
+        /* Melhorar o botão de busca no modo escuro */
+        .dark-mode .btn-primary {
+            background-color: #1a1a2e;
+            border-color: #ffd700;
+        }
+
+        .dark-mode .btn-primary:hover {
+            background-color: #ffd700;
+            color: #1a1a2e;
+        }
+
+
+
+        /* Melhorar o título "Digimons Cadastrados" no modo escuro */
+
+        .dark-mode .card-header {
+        background-color: #822659 !important;
+        border-color: #5e1c40;
+    }
+
+        .dark-mode .card-header h5 {
+           color: #ffffff !important;
+            font-weight: 600;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+        }         
+
+        /* Para garantir que o texto nos cabeçalhos seja bem visível */
+        .dark-mode .card-header .row {
+            color: #f0f0f0;
+        }
+
+        /* Para melhorar a aparência da barra de pesquisa contra o fundo bordô */
+        .dark-mode .card-header .form-control {
+            background-color: #3f3f3f;
+            border-color: #5e1c40;
+            color: white;
+        }
+
+        
+        /* Corrigir o footer no modo escuro */
+        .dark-mode .card-footer {
+            background-color: #1e1e1e !important;
+            border-color: #333;
+            color: #e0e0e0;
+        }
+
+        /* Melhorar a paginação no modo escuro */
+        .dark-mode .pagination {
+            margin-bottom: 0;
+        }
+
+        .dark-mode .pagination .page-item .page-link {
+            background-color: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.75rem;
+        }
+
+        .dark-mode .pagination .page-item.active .page-link {
+            background-color: #822659;
+            border-color: #5e1c40;
+            color: white;
+        }
+
+        /* Reduzir o tamanho das setas de navegação */
+        .pagination .page-link[aria-label="Next"],
+        .pagination .page-link[aria-label="Previous"],
+        .pagination .page-item:first-child .page-link,
+        .pagination .page-item:last-child .page-link {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.5rem;
+            line-height: 1;
+        }
+
+        /* Reduzir especificamente o tamanho do ícone da seta */
+        .pagination .page-link svg,
+        .pagination .page-link i {
+            width: 12px;
+            height: 12px;
+            font-size: 12px;
+        }
+        /* Estilizar as setas para combinar com o tema */
+        .dark-mode .pagination .page-link[aria-label="Next"],
+        .dark-mode .pagination .page-link[aria-label="Previous"] {
+            background-color: #2196f3;
+            color: white;
+            border-color: #1976d2;
+        }
+
+        .dark-mode .pagination .page-link:hover {
+            background-color: #3d3d3d;
+            color: #ffd700;
+        }
+
+        /* Melhorar o texto de exibição de registros */
+        .dark-mode .text-muted {
+            color: #b0b0b0 !important;
+        }
+
+        .dark-mode .form-text {
+            color: #aaa;
+        }
+
+        .dark-mode .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .dark-mode .nav-link:hover, .dark-mode .nav-link.active {
+            color: white !important;
+        }
+
+        /* Ajustes adicionais para o modo escuro */
+        .dark-mode .digimon-header {
+            background-color: #1a1a2e;
+        }
+
+        .dark-mode .table tbody tr:hover {
+            background-color: rgba(30, 30, 60, 0.7) !important;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+}
+
+        .dark-mode .table tbody tr:hover td,
+        .dark-mode .table tbody tr:hover td:before,
+        .dark-mode .table-responsive-card tbody tr:hover td,
+        .dark-mode .table-responsive-card tbody tr:hover td:before {
+            color: #ffd700 !important; /* Cor dourada */
+            text-shadow: 0 0 3px rgba(255, 215, 0, 0.3);
+            font-weight: 500;
+        }
+
+        .dark-mode .table tbody tr:hover .badge {
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+
+        .dark-mode .pagination .page-link {
+            background-color: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .pagination .page-link:hover {
+            background-color: #3d3d3d;
+        }
+
+        .dark-mode .form-check-input {
+            background-color: #2d2d2d;
+            border-color: #444;
+        }
+
+        .dark-mode .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+
+        /* Substituir setas por texto e ajustar tamanho da paginação */
+        .pagination .page-item:first-child .page-link::before {
+            content: "Voltar";
+            font-size: 0.8rem;
+        }
+
+        .pagination .page-item:last-child .page-link::before {
+            content: "Próxima";
+            font-size: 0.8rem;
+        }
+
+        .pagination .page-item:first-child .page-link svg,
+        .pagination .page-item:last-child .page-link svg,
+        .pagination .page-link[aria-label="Next"] svg,
+        .pagination .page-link[aria-label="Previous"] svg {
+            display: none;
+        }
+
+        .pagination .page-item:first-child .page-link,
+        .pagination .page-item:last-child .page-link {
+            padding: 0.3rem 0.8rem;
+            font-size: 0;
+            line-height: 1.5;
+        }
+
+        /* Ajustes adicionais para o modo escuro */
+        .dark-mode .pagination .page-item:first-child .page-link,
+        .dark-mode .pagination .page-item:last-child .page-link {
+            background-color: #2d2d2d;
+            border-color: #444;
+        }
+
+        .dark-mode .pagination .page-item:first-child .page-link:hover,
+        .dark-mode .pagination .page-item:last-child .page-link:hover {
+            background-color: #3d3d3d;
+            color: #ffd700;
+        }
+
+        
+
         
         /* Responsividade para tabelas em dispositivos móveis */
         @media (max-width: 767.98px) {
