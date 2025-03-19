@@ -41,6 +41,8 @@
             --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+
+
         /* Estilos base */
         body {
             font-family: 'Poppins', sans-serif;
@@ -839,6 +841,70 @@
     .skip-link:focus {
         top: 0;
     }
+
+
+        /* Reduzir a altura e o tamanho da caixa de paginação */
+        .pagination {
+            margin: 0 auto;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+        }
+
+        /* Diminuir o tamanho das setas */
+        .pagination .page-link {
+            font-size: 0.75rem; /* Diminuir tamanho do texto */
+            padding: 0.3rem 0.6rem; /* Reduzir espaçamento interno */
+            border-radius: 5px; /* Bordas arredondadas menores */
+            color: #333; /* Cor do texto */
+        }
+
+        .pagination .page-link:hover {
+            background-color: #f0f0f0; /* Fundo claro ao passar o mouse */
+            color: #000; /* Texto escuro ao passar o mouse */
+        }
+
+        /* Esconder texto "Exibindo X a Y de Z registros" */
+        .text-muted {
+            display: none !important;
+        }
+
+            /* Reduzir a altura e largura da caixa de paginação */
+        .pagination {
+            margin: 0 auto;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+        }
+
+        /* Diminuir tamanho dos links de paginação */
+        .pagination .page-link {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+        }
+
+        /* Ajustar os botões Previous e Next */
+        .pagination .page-item:first-child .page-link,
+        .pagination .page-item:last-child .page-link {
+            font-size: 0.85rem;
+        }
+
+        /* Ajustar a exibição do texto "Showing X to Y of Z results" */
+        .text-muted {
+            font-size: 0.85rem;
+            color: #6c757d !important;
+        }
+
+
+
+
 </style>
 
 @yield('styles')

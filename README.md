@@ -1,84 +1,70 @@
-Este é meu projeto de CRUD desenvolvido como atividade da faculdade. Escolhi o tema de Digimons porque sempre fui fã da série e achei que seria uma forma divertida de aplicar os conceitos aprendidos em aula.
+# DigimonMM - CRUD de Digimons
 
-O sistema permite gerenciar uma lista de Digimons, com informações como nome, level, tipo e atributo. Implementei também um recurso de ordenação na listagem, permitindo organizar os Digimons por qualquer uma das colunas, em ordem crescente ou decrescente.
 
-Tecnologias Utilizadas
-PHP 8.4
+## Sobre o Projeto
 
-Laravel (Framework PHP)
+DigimonMM é um sistema CRUD (Create, Read, Update, Delete) desenvolvido como projeto acadêmico, focado na gestão de Digimons. O projeto oferece uma interface intuitiva para gerenciar uma coleção de Digimons.
 
-MySQL (Banco de Dados)
+### Funcionalidades Principais
 
-HTML, CSS
+- 📋 Listagem de Digimons com paginação e ordenação
+- ➕ Adição de novos Digimons
+- 🔍 Visualização detalhada de cada Digimon
+- ✏️ Edição de informações dos Digimons
+- 🗑️ Exclusão de Digimons
 
-Bootstrap 5 (Framework CSS)
+## Tecnologias Utilizadas
 
-JavaScript
+- PHP 8.4
+- Laravel (Framework PHP)
+- MySQL
+- HTML, CSS, JavaScript
+- Bootstrap 5
 
-Funcionalidades
-Listar todos os Digimons com paginação
+## Começando
 
-Ordenar a lista por qualquer coluna (crescente/decrescente)
+### Pré-requisitos
 
-Adicionar novos Digimons
+- PHP 8.4+
+- Composer
+- MySQL
+- Servidor web (Apache, Nginx) ou PHP Artisan serve
 
-Visualizar detalhes de um Digimon específico
+### Instalação
 
-Editar informações de Digimons existentes
-
-Excluir Digimons
-
-Como Executar o Projeto
-Pré-requisitos
-PHP 8.4 ou superior
-
-Composer
-
-MySQL
-
-Servidor web (Apache, Nginx) ou PHP Artisan serve
-
-Passos para Instalação
-Clone o repositório:
-
-text
+1. Clone o repositório
 git clone https://github.com/seu-usuario/digimon-mm.git
 cd digimon-mm
-Instale as dependências:
 
-text
+
+2. Instale as dependências
 composer install
-Configure o arquivo .env:
 
-text
+3. Configure o ambiente
 cp .env.example .env
-Edite o arquivo .env com suas configurações de banco de dados.
 
-Gere a chave da aplicação:
+Configure .env para acessar o banco de dados
 
-text
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=digimon_mm
+DB_USERNAME=root
+DB_PASSWORD=aot2000
+
+4. Prepare a aplicação
 php artisan key:generate
-Execute as migrações:
+php artisan migrate --seed //Com isso, não será necessário rodar manualmente o script do export_data.sql
 
-text
-php artisan migrate
-Importe os dados iniciais:
-
-text
-mysql -u seu_usuario -p seu_banco < export_database.sql
-Inicie o servidor:
-
-text
+5. Inicie o servidor
 php artisan serve
-Acesse o sistema em: http://localhost:8000/digimons
 
-Estrutura do Projeto
-app/Models/Digimon.php: Modelo que representa um Digimon no sistema
+6. Acesse `http://localhost:8000/digimons`
 
-app/Http/Controllers/DigimonController.php: Controller com as ações CRUD
+## Estrutura do Projeto
 
-resources/views/digimons/: Pasta com as views do sistema
-
-database/migrations/: Migrações para criar e modificar a tabela de Digimons
-
-export_database.sql: Script SQL com dados iniciais para o banco
+- `app/Models/Digimon.php`: Modelo Digimon
+- `app/Http/Controllers/DigimonController.php`: Controller CRUD
+- `resources/views/digimons/`: Views do sistema
+- `database/migrations/`: Migrações do banco de dados
+- `database/seeders/DigimonSeeder.php`: Seeder para dados iniciais
