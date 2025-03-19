@@ -33,7 +33,7 @@ DigimonMM é um sistema CRUD (Create, Read, Update, Delete) desenvolvido como pr
 ### Instalação
 
 1. Clone o repositório
-git clone https://github.com/seu-usuario/digimon-mm.git
+git clone https://github.com/MouraMath/digimon-college.git
 cd digimon-mm
 
 
