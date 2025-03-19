@@ -68,3 +68,8 @@ php artisan serve
 - `resources/views/digimons/`: Views do sistema
 - `database/migrations/`: Migrações do banco de dados
 - `database/seeders/DigimonSeeder.php`: Seeder para dados iniciais
+
+![image](https://github.com/user-attachments/assets/abc3d1fc-2d28-4457-aae6-5f5ee2060e04)
+
+![image](https://github.com/user-attachments/assets/d8f94461-968b-47c0-8664-7b3dd268aec8)
+
